@@ -1,6 +1,6 @@
 var todoitems = JSON.parse(localStorage.getItem("todoData"));
 
-var completed = JSON.parse(localStorage.getItem("completed")) || []
+var completed = JSON.parse(localStorage.getItem("completedTodo")) || [];
 
 todoitems.map(function (elem){
     console.log(elem);
@@ -30,9 +30,8 @@ todoitems.map(function (elem){
 });
 
 function markCompleteFunction(elem) {
-    console.log(elem);
+  event.preventDefault();
     completed.push(elem);
-    console.log(completed);
      localStorage.setItem("completedTodo",JSON.stringify(completed));
 }
 
